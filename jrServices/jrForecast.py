@@ -5,6 +5,8 @@ from pywws import Localisation
 from pywws import ZambrettiCore
 from pywws.TimeZone import Local, utc
 
+import jrMail
+
 
 def ZambrettiCode(params, hourly_data):
     north = eval(params.get('Zambretti', 'north', 'True'))
@@ -32,13 +34,13 @@ def Zambretti(params, hourly_data):
 
 
 # ----------------------------------------------------------------------------------------------------------------------
-
 data_dir = '/home/robert/jrWH1080/data'
 params = DataStore.params(data_dir)
 Localisation.SetApplicationLanguage(params)
 hourly_data = DataStore.hourly_store(data_dir)
 idx = hourly_data.before(datetime.max)
-mailtxt = 'Zambretti (current): ' + Zambretti(params, hourly_data[idx])
+mailtxt = 'Zambretti(current): ' + Zambretti(params, hourly_data[idx])
+mailtxt += '\n'
 
 idx = idx.replace(tzinfo=utc).astimezone(Local)
 if idx.hour < 8 or (idx.hour == 8 and idx.minute < 30):
@@ -50,4 +52,5 @@ lcl = idx.replace(tzinfo=utc).astimezone(Local)
 mailtxt += 'Zambretti (at %s):' % lcl.strftime('%H:%M %Z')
 mailtxt += Zambretti(params, hourly_data[idx])
 
-print (mailtxt)
+myMail = jrMail()
+myMail.sendMail('Wettervorhersage', mailtxt)
