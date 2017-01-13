@@ -17,7 +17,6 @@ class JrMail:
         self.__user, mail_account, self.__pw = secrets.authenticators(self.__smtpserver)
 
     # ------------------------------------------------------------------------------------------------------------------
-
     def sendMail(self, subject, inhalt):
         text = 'From: ' + self.__mailTo + '\n'
         text += 'To: ' + self.__mailTo + '\n'

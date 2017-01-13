@@ -52,5 +52,5 @@ lcl = idx.replace(tzinfo=utc).astimezone(Local)
 mailtxt += 'Zambretti (at %s):' % lcl.strftime('%H:%M %Z')
 mailtxt += Zambretti(params, hourly_data[idx])
 
-myMail = jrMail()
+myMail = jrMail.JrMail()
 myMail.sendMail('Wettervorhersage', mailtxt)
