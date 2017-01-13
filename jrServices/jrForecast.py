@@ -4,7 +4,7 @@ from pywws.TimeZone import Local, utc
 from pywws import ZambrettiCore
 
 print ("Hello World")
-data_dir = '~/jrWH1080/data'
+data_dir = '/home/robert/jrWH1080/data'
 params = DataStore.params(data_dir)
 Localisation.SetApplicationLanguage(params)
 hourly_data = DataStore.hourly_store(data_dir)
