@@ -5,6 +5,24 @@ from pywws import Localisation
 from pywws.TimeZone import Local, utc
 from pywws import ZambrettiCore
 
+def ZambrettiCode(params, hourly_data):
+    north = eval(params.get('Zambretti', 'north', 'True'))
+    baro_upper = eval(params.get('Zambretti', 'baro upper', '1050.0'))
+    baro_lower = eval(params.get('Zambretti', 'baro lower', '950.0'))
+    if not hourly_data['rel_pressure']:
+        return ''
+    if hourly_data['wind_ave'] is None or hourly_data['wind_ave'] < 0.3:
+        wind = None
+    else:
+        wind = hourly_data['wind_dir']
+    if hourly_data['pressure_trend'] is None:
+        trend = 0.0
+    else:
+        trend = hourly_data['pressure_trend'] / 3.0
+    return ZambrettiCore.ZambrettiCode(
+        hourly_data['rel_pressure'], hourly_data['idx'].month, wind, trend,
+        north=north, baro_top=baro_upper, baro_bottom=baro_lower)
+
 print ("Hello World")
 data_dir = '/home/robert/jrWH1080/data'
 params = DataStore.params(data_dir)
