@@ -1,0 +1,5 @@
+#hourly#
+#timezone local#
+#roundtime True#
+Today's weather forecast, computed at #idx "%H:%M %Z: "#
+#calc "Zambretti(params, data)" "%s"#
