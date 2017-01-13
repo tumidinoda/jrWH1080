@@ -2,8 +2,9 @@ from datetime import datetime, timedelta
 
 from pywws import DataStore
 from pywws import Localisation
-from pywws.TimeZone import Local, utc
 from pywws import ZambrettiCore
+from pywws.TimeZone import Local, utc
+
 
 def ZambrettiCode(params, hourly_data):
     north = eval(params.get('Zambretti', 'north', 'True'))
@@ -23,6 +24,14 @@ def ZambrettiCode(params, hourly_data):
         hourly_data['rel_pressure'], hourly_data['idx'].month, wind, trend,
         north=north, baro_top=baro_upper, baro_bottom=baro_lower)
 
+
+# ----------------------------------------------------------------------------------------------------------------------
+def Zambretti(params, hourly_data):
+    code = ZambrettiCode(params, hourly_data)
+    return Localisation.translation.ugettext(ZambrettiCore.ZambrettiText(code))
+
+
+# ----------------------------------------------------------------------------------------------------------------------
 print ("Hello World")
 data_dir = '/home/robert/jrWH1080/data'
 params = DataStore.params(data_dir)
@@ -36,21 +45,7 @@ if idx.hour < 8 or (idx.hour == 8 and idx.minute < 30):
 idx = idx.replace(hour=9, minute=0, second=0)
 idx = hourly_data.nearest(idx.astimezone(utc).replace(tzinfo=None))
 lcl = idx.replace(tzinfo=utc).astimezone(Local)
-print 'Zambretti (at %s):' % lcl.strftime('%H:%M %Z'),\
-       Zambretti(params, hourly_data[idx])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print 'Zambretti (at %s):' % lcl.strftime('%H:%M %Z'), \
+    Zambretti(params, hourly_data[idx])
 
 Zambretti(params, hourly_data[idx])
