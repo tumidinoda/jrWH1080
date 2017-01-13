@@ -49,7 +49,7 @@ idx = idx.replace(hour=9, minute=0, second=0)
 idx = hourly_data.nearest(idx.astimezone(utc).replace(tzinfo=None))
 lcl = idx.replace(tzinfo=utc).astimezone(Local)
 
-mailtxt += 'Zambretti (at %s):' % lcl.strftime('%H:%M %Z')
+mailtxt += 'Zambretti(at %s): ' % lcl.strftime('%H:%M %Z')
 mailtxt += Zambretti(params, hourly_data[idx])
 
 myMail = jrMail.JrMail()
