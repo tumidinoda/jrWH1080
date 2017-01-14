@@ -1,0 +1,48 @@
+2017-01-14 13:48:58:pywws.Logger:pywws version 16.12.0, build 1367 (e917ba9)
+2017-01-14 13:49:41:pywws.ToService(underground_rf):rsp: success
+2017-01-14 13:50:09:pywws.ToService(underground):rsp: success
+2017-01-14 13:56:49:pywws.LiveLog:LIBUSB_ERROR_TIMEOUT [-7]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pywws/LiveLog.py", line 80, in LiveLog
+    logged_only=(not tasks.has_live_tasks())):
+  File "/usr/local/lib/python2.7/dist-packages/pywws/LogData.py", line 256, in live_data
+    for data, ptr, logged in self.ws.live_data(logged_only=logged_only):
+  File "/usr/local/lib/python2.7/dist-packages/pywws/WeatherStation.py", line 440, in live_data
+    new_ptr = self.current_pos()
+  File "/usr/local/lib/python2.7/dist-packages/pywws/WeatherStation.py", line 586, in current_pos
+    self._read_fixed_block(0x0020), self.lo_fix_format['current_pos'])
+  File "/usr/local/lib/python2.7/dist-packages/pywws/WeatherStation.py", line 642, in _read_fixed_block
+    result += self._read_block(mempos)
+  File "/usr/local/lib/python2.7/dist-packages/pywws/WeatherStation.py", line 630, in _read_block
+    new_block = self.cusb.read_block(ptr)
+  File "/usr/local/lib/python2.7/dist-packages/pywws/WeatherStation.py", line 265, in read_block
+    if not self.dev.write_data(buf):
+  File "/usr/local/lib/python2.7/dist-packages/pywws/device_libusb1.py", line 131, in write_data
+    0x200, 0, str_buf, timeout=50)
+  File "/usr/local/lib/python2.7/dist-packages/usb1/__init__.py", line 1383, in controlWrite
+    sizeof(data), timeout)
+  File "/usr/local/lib/python2.7/dist-packages/usb1/__init__.py", line 1359, in _controlTransfer
+    mayRaiseUSBError(result)
+  File "/usr/local/lib/python2.7/dist-packages/usb1/__init__.py", line 133, in mayRaiseUSBError
+    __raiseUSBError(value)
+  File "/usr/local/lib/python2.7/dist-packages/usb1/__init__.py", line 125, in raiseUSBError
+    raise __STATUS_TO_EXCEPTION_DICT.get(value, __USBError)(value)
+USBErrorTimeout: LIBUSB_ERROR_TIMEOUT [-7]
+2017-01-14 14:02:13:pywws.Logger:pywws version 16.12.0, build 1367 (e917ba9)
+2017-01-14 14:02:19:root:failed to create /var/run/pywws.pid
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pywws/livelogdaemon.py", line 110, in main
+    runner.do_action()
+  File "/usr/local/lib/python2.7/dist-packages/daemon/runner.py", line 274, in do_action
+    func(self)
+  File "/usr/local/lib/python2.7/dist-packages/daemon/runner.py", line 182, in _start
+    self.daemon_context.open()
+  File "/usr/local/lib/python2.7/dist-packages/daemon/daemon.py", line 389, in open
+    self.pidfile.__enter__()
+  File "/usr/local/lib/python2.7/dist-packages/lockfile/__init__.py", line 197, in __enter__
+    self.acquire()
+  File "/usr/local/lib/python2.7/dist-packages/daemon/pidfile.py", line 60, in acquire
+    super(TimeoutPIDLockFile, self).acquire(timeout, *args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/lockfile/pidlockfile.py", line 91, in acquire
+    raise LockFailed("failed to create %s" % self.path)
+LockFailed: failed to create /var/run/pywws.pid
