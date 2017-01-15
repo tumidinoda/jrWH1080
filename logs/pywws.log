@@ -1,3 +1,8 @@
-2017-01-14 15:55:05:pywws.Logger:pywws version 16.12.0, build 1367 (e917ba9)
-2017-01-14 15:56:06:pywws.ToService(underground_rf):rsp: success
-2017-01-14 16:00:07:pywws.ToService(underground):rsp: success
+2017-01-15 17:05:08:pywws.Logger:pywws version 16.12.0, build 1367 (e917ba9)
+2017-01-15 17:05:42:pywws.ToService(underground_rf):rsp: success
+2017-01-15 17:05:42:pywws.Upload:[Errno -2] Name or service not known
+2017-01-15 17:09:08:pywws.ToService(underground):rsp: success
+2017-01-15 17:15:06:pywws.Logger:pywws version 16.12.0, build 1367 (e917ba9)
+2017-01-15 17:16:07:pywws.ToService(underground_rf):rsp: success
+2017-01-15 17:16:07:pywws.Upload:[Errno -2] Name or service not known
+2017-01-15 17:19:08:pywws.ToService(underground):rsp: success
