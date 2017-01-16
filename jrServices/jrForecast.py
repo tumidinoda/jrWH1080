@@ -40,7 +40,7 @@ Localisation.SetApplicationLanguage(params)
 hourly_data = DataStore.hourly_store(data_dir)
 idx = hourly_data.before(datetime.max)
 mailtxt = 'Zambretti(current): ' + Zambretti(params, hourly_data[idx])
-mailtxt += '\n\n'
+mailtxt += '\n'
 
 idx = idx.replace(tzinfo=utc).astimezone(Local)
 if idx.hour < 8 or (idx.hour == 8 and idx.minute < 30):
@@ -51,6 +51,7 @@ lcl = idx.replace(tzinfo=utc).astimezone(Local)
 
 mailtxt += 'Zambretti(at %s): ' % lcl.strftime('%H:%M %Z')
 mailtxt += Zambretti(params, hourly_data[idx])
+print(mailtxt)
 
 myMail = jrMail.JrMail()
 myMail.sendMail('Wettervorhersage', mailtxt)

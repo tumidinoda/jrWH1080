@@ -15,20 +15,15 @@
 #! You should have received a copy of the GNU General Public License               #
 #! along with this program; if not, write to the Free Software                     #
 #! Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA. #
-#live#
-{
-#idx          "'dateutc'        : '%Y-%m-%d %H:%M:%S',"#
-#wind_dir     "'winddir'        : '%.0f'," "" "winddir_degrees(x)"#
-#wind_ave     "'windspeedmph'   : '%.2f'," "" "wind_mph(x)"#
-#wind_gust    "'windgustmph'    : '%.2f'," "" "wind_mph(x)"#
-#hum_out      "'humidity'       : '%.d',"#
-#hum_in       "'indoorhumidity' : '%.d',"#
-#temp_out     "'tempf'          : '%.1f'," "" "temp_f(x)"#
-#temp_in      "'indoortempf'    : '%.1f'," "" "temp_f(x)"#
-#rel_pressure "'baromin'        : '%.4f'," "" "pressure_inhg(x)"#
-#illuminance  "'solarradiation' : '%.2f'," "" "illuminance_wm2(x)"#
-#uv           "'UV'             : '%d',"#
-#calc "temp_f(dew_point(data['temp_out'], data['hum_out']))" "'dewptf' : '%.1f',"#
-#calc "rain_inch(rain_hour(data))" "'rainin' : '%g',"#
-#calc "rain_inch(rain_day(data))" "'dailyrainin' : '%g',"#
-}
+#hourly#
+#timezone local#
+#roundtime True#
+#idx "%H:%M:"# Temp: #temp_out "%.1f°C" "-"#
+, Wind: #wind_dir "%s, " "" "winddir_text(x)"#
+#wind_ave "%.0f kmh(ave), " "" "wind_kmph(x)"#
+#wind_gust "%.0f kmh(gust)" "" "wind_kmph(x)"#
+, Hum: #hum_out "%d%%"#
+, Rain #rain "%.1f mm"#
+, Press: #rel_pressure "%.0f hPa, "#
+#pressure_trend "%s" "" "pressure_trend_text(x)"#
+, ##pywws

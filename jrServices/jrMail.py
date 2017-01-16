@@ -11,10 +11,9 @@ class JrMail:
         self.myLogger = logging.getLogger('jrWetterstationLogger')
         self.myLogger.debug('Mail constructor')
 
-        self.__smtpserver = 'mail.gmx.net'
         self.__mailTo = 'robert.jonas@gmx.at'
         secrets = netrc.netrc()
-        self.__user, mail_account, self.__pw = secrets.authenticators(self.__smtpserver)
+        self.__user, self.__smtpserver, self.__pw = secrets.authenticators('Mailprovider')
 
     # ------------------------------------------------------------------------------------------------------------------
     def sendMail(self, subject, inhalt):
