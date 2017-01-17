@@ -2,7 +2,7 @@
 import logging
 import netrc
 import smtplib
-import time
+from email.mime.text import MIMEText
 
 
 # noinspection PyPep8Naming
@@ -19,17 +19,15 @@ class JrMail:
 
     # ------------------------------------------------------------------------------------------------------------------
     def sendMail(self, subject, inhalt):
-        ascii_inhalt=repr(inhalt)
-        text = 'From: ' + self.__mail_from + '\r\n'
-        text += 'To: ' + self.__mail_to + '\r\n'
-        text += 'Date: ' + time.ctime(time.time()) + '\r\n'
-        text += 'Subject: ' + subject + '\n\n'
-        text += ascii_inhalt
+        msg = MIMEText(inhalt, 'plain', 'utf-8')
+        msg['From'] = self.__mail_from
+        msg['To'] = self.__mail_to
+        msg['Subject'] = subject
 
         self.myLogger.debug(text)
 
         # server = smtplib.SMTP_SSL(self.__smtp_server)
         server = smtplib.SMTP(self.__smtp_server)
         server.login(self.__mail_user, self.__mail_pw)
-        server.sendmail(self.__mail_from, self.__mail_to, text)
+        server.sendmail(self.__mail_from, self.__mail_to, msg.as_string())
         server.quit()
