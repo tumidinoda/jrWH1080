@@ -1,12 +1,12 @@
-2017-01-16 16:05:07:pywws.Logger:pywws version 16.12.0, build 1367 (e917ba9)
-2017-01-16 16:05:47:pywws.ToService(underground_rf):rsp: success
-2017-01-16 16:05:47:pywws.Upload:[Errno -2] Name or service not known
-2017-01-16 16:07:08:pywws.ToService(underground):rsp: success
-2017-01-16 16:57:10:pywws.ToTwitter:[{u'message': u'Status is over 140 characters.', u'code': 186}]
-2017-01-16 17:43:36:pywws.ToTwitter:('Connection aborted.', gaierror(-2, 'Name or service not known'))
-2017-01-16 17:43:36:pywws.ToService(underground_rf):exc: [Errno -2] Name or service not known
-2017-01-16 17:47:35:pywws.ToTwitter:[{u'message': u'Status is over 140 characters.', u'code': 186}]
-2017-01-16 18:05:07:pywws.Logger:pywws version 16.12.0, build 1367 (e917ba9)
-2017-01-16 18:06:34:pywws.ToService(underground_rf):rsp: success
-2017-01-16 18:06:34:pywws.Upload:[Errno -2] Name or service not known
-2017-01-16 18:07:07:pywws.ToService(underground):rsp: success
+2017-01-16 21:35:06:pywws.Logger:pywws version 16.12.0, build 1367 (e917ba9)
+2017-01-16 21:36:11:pywws.ToService(underground_rf):rsp: success
+2017-01-16 21:36:11:pywws.Upload:[Errno -2] Name or service not known
+2017-01-16 21:37:08:pywws.ToService(underground):rsp: success
+2017-01-17 03:32:53:pywws.weather_station:setting sensor clock 5.14002
+2017-01-17 03:32:53:pywws.weather_station:sensor clock drift 2.93665 2.62647
+2017-01-17 19:32:00:pywws.weather_station:setting station clock 0.879192
+2017-01-17 19:32:00:pywws.weather_station:station clock drift 0.00916042 0.00744866
+2017-01-17 20:40:08:pywws.Logger:pywws version 16.12.0, build 1367 (e917ba9)
+2017-01-17 20:41:08:pywws.ToService(underground_rf):rsp: success
+2017-01-17 20:41:08:pywws.Upload:[Errno -2] Name or service not known
+2017-01-17 20:42:08:pywws.ToService(underground):rsp: success
