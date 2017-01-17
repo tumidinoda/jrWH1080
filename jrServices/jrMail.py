@@ -19,10 +19,10 @@ class JrMail:
 
     # ------------------------------------------------------------------------------------------------------------------
     def sendMail(self, subject, inhalt):
-        text = 'From: ' + self.__mail_from + '\n'
-        text += 'To: ' + self.__mail_to + '\n'
-        text += 'Date: ' + time.ctime(time.time()) + '\n'
-        text += 'Subject: ' + subject + '\n\n'
+        text = 'From: ' + self.__mail_from + '\r\n'
+        text += 'To: ' + self.__mail_to + '\r\n'
+        text += 'Date: ' + time.ctime(time.time()) + '\r\n'
+        text += 'Subject: ' + subject + '\r\n'
         text += inhalt
 
         self.myLogger.debug(text)
