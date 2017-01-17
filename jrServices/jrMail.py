@@ -24,8 +24,6 @@ class JrMail:
         msg['To'] = self.__mail_to
         msg['Subject'] = subject
 
-        self.myLogger.debug(text)
-
         # server = smtplib.SMTP_SSL(self.__smtp_server)
         server = smtplib.SMTP(self.__smtp_server)
         server.login(self.__mail_user, self.__mail_pw)
