@@ -65,3 +65,12 @@ ImportError: No module named twitter
 2017-01-22 23:20:06:pywws.Logger:pywws version 16.12.0, build 1367 (e917ba9)
 2017-01-22 23:20:32:pywws.ToService(underground_rf):rsp: success
 2017-01-22 23:22:22:pywws.ToService(underground):rsp: success
+2017-01-23 20:06:04:pywws.weather_station:setting sensor clock 28.9829
+2017-01-23 20:06:04:pywws.weather_station:sensor clock drift 2.99278 2.91278
+2017-01-23 22:57:00:pywws.weather_station:setting station clock 0.192205
+2017-01-23 22:57:00:pywws.weather_station:station clock drift -0.227008 -0.0691833
+2017-01-24 18:28:05:pywws.ToService(underground_rf):exc: timed out
+2017-01-24 20:06:07:pywws.weather_station:setting sensor clock 31.4279
+2017-01-24 20:06:07:pywws.weather_station:sensor clock drift 2.44499 2.79583
+2017-01-24 23:02:00:pywws.weather_station:setting station clock 0.349573
+2017-01-24 23:02:00:pywws.weather_station:station clock drift 0.156823 -0.0126817
