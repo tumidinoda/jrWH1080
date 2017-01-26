@@ -74,3 +74,18 @@ ImportError: No module named twitter
 2017-01-24 20:06:07:pywws.weather_station:sensor clock drift 2.44499 2.79583
 2017-01-24 23:02:00:pywws.weather_station:setting station clock 0.349573
 2017-01-24 23:02:00:pywws.weather_station:station clock drift 0.156823 -0.0126817
+2017-01-25 20:07:46:pywws.weather_station:setting sensor clock 34.6429
+2017-01-25 20:07:46:pywws.weather_station:sensor clock drift 3.21124 2.89969
+2017-01-25 23:07:02:pywws.weather_station:missed ptr change time
+2017-01-25 23:12:00:pywws.weather_station:setting station clock 0.575534
+2017-01-25 23:12:00:pywws.weather_station:station clock drift 0.224402 0.0465893
+2017-01-26 06:07:07:pywws.weather_station:live_data log extended
+2017-01-26 07:03:07:pywws.weather_station:live_data log extended
+2017-01-26 07:19:07:pywws.weather_station:live_data log extended
+2017-01-26 07:55:07:pywws.weather_station:live_data log extended
+2017-01-26 08:31:07:pywws.weather_station:live_data log extended
+2017-01-26 09:27:07:pywws.weather_station:live_data log extended
+2017-01-26 09:43:07:pywws.weather_station:live_data log extended
+2017-01-26 09:59:07:pywws.weather_station:live_data log extended
+2017-01-26 10:55:07:pywws.weather_station:live_data log extended
+2017-01-26 12:06:06:pywws.weather_station:live_data log extended
