@@ -1,4 +1,4 @@
 Traceback (most recent call last):
   File "/home/robert/jrWH1080/jrServices/jrForecast.py", line 55, in <module>
     print(mailtxt)
-UnicodeEncodeError: 'ascii' codec can't encode character u'\xe4' in position 24: ordinal not in range(128)
+UnicodeEncodeError: 'ascii' codec can't encode character u'\xf6' in position 23: ordinal not in range(128)
