@@ -54,5 +54,5 @@ mailtxt += 'Zambretti(at %s): ' % lcl.strftime('%H:%M %Z')
 mailtxt += Zambretti(params, hourly_data[idx])
 print(mailtxt)
 
-myMail = jrMail.JrMail()
+myMail = JrMail()
 myMail.sendMail('Wettervorhersage', mailtxt)
