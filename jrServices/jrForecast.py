@@ -55,4 +55,4 @@ mailtxt += Zambretti(params, hourly_data[idx])
 print(mailtxt)
 
 myMail = JrMail()
-myMail.sendMail('Wettervorhersage', mailtxt)
+myMail.send('Wettervorhersage', mailtxt)
