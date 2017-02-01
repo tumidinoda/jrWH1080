@@ -6,7 +6,7 @@ from pywws import Localisation
 from pywws import ZambrettiCore
 from pywws.TimeZone import Local, utc
 
-import jrMail
+from jrPyCore.jrMail import JrMail
 
 
 def ZambrettiCode(params, hourly_data):
