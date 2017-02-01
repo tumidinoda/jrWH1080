@@ -7,3 +7,7 @@
 2017-01-31 16:13:40:pywws.weather_station:sensor clock drift 3.34748 2.00876
 2017-01-31 16:17:00:pywws.weather_station:setting station clock 0.425172
 2017-01-31 16:17:00:pywws.weather_station:station clock drift -0.551005 -0.14634
+2017-02-01 16:15:19:pywws.weather_station:setting sensor clock 7.40879
+2017-02-01 16:15:19:pywws.weather_station:sensor clock drift 3.02585 2.26303
+2017-02-01 16:22:00:pywws.weather_station:setting station clock 0.442866
+2017-02-01 16:22:00:pywws.weather_station:station clock drift 0.0176328 -0.105347
