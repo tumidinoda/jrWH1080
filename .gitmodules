@@ -1,6 +1,3 @@
 [submodule "pywws"]
 	path = pywws
 	url = https://github.com/jim-easterbrook/pywws.git
-[submodule "jrPyCore"]
-	path = jrPyCore
-	url = https://github.com/tumidinoda/jrPyCore.git
