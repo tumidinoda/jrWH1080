@@ -1,3 +1,3 @@
 #crontab Regeln
-0 8  * * * python /home/robert/jrWH1080/jrServices/jrForecast.py > /home/robert/jrWH1080/logs/jrForecast.log 2>&1
-*/5 * * * * sudo sh /home/robert/jrWH1080/config/pywws-watchdog.sh > /home/robert/jrWH1080/logs/cron.log 2>&1
+0 8  * * * /home/robert/jrWH1080/config/startForecast.sh > /home/robert/jrWH1080/logs/cronForecast.log 2>&1
+*/5 * * * * sudo sh /home/robert/jrWH1080/config/pywws-watchdog.sh > /home/robert/jrWH1080/logs/cronPywwsWatchdog.log 2>&1
