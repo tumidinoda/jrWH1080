@@ -37,25 +37,29 @@ def Zambretti(params, hourly_data):
 
 
 # ----------------------------------------------------------------------------------------------------------------------
-my_logger = JrLogger().setup(__name__)
-my_logger.info('jrForecast started')
-data_dir = '/home/robert/jrWH1080/data'
-params = DataStore.params(data_dir)
-Localisation.SetApplicationLanguage(params)
-hourly_data = DataStore.hourly_store(data_dir)
-idx = hourly_data.before(datetime.max)
-mailtxt = '- Zambretti(current): ' + Zambretti(params, hourly_data[idx])
-mailtxt += '\n- '
+def forecast():
+    my_logger = JrLogger().setup(__name__)
+    my_logger.info('jrForecast started')
+    data_dir = '/home/robert/jrWH1080/data'
+    params = DataStore.params(data_dir)
+    Localisation.SetApplicationLanguage(params)
+    hourly_data = DataStore.hourly_store(data_dir)
+    idx = hourly_data.before(datetime.max)
+    mailtxt = '- Zambretti(current): ' + Zambretti(params, hourly_data[idx])
+    mailtxt += '\n- '
 
-idx = idx.replace(tzinfo=utc).astimezone(Local)
-if idx.hour < 8 or (idx.hour == 8 and idx.minute < 30):
-    idx -= timedelta(hours=24)
-idx = idx.replace(hour=9, minute=0, second=0)
-idx = hourly_data.nearest(idx.astimezone(utc).replace(tzinfo=None))
-lcl = idx.replace(tzinfo=utc).astimezone(Local)
+    idx = idx.replace(tzinfo=utc).astimezone(Local)
+    if idx.hour < 8 or (idx.hour == 8 and idx.minute < 30):
+        idx -= timedelta(hours=24)
+    idx = idx.replace(hour=9, minute=0, second=0)
+    idx = hourly_data.nearest(idx.astimezone(utc).replace(tzinfo=None))
+    lcl = idx.replace(tzinfo=utc).astimezone(Local)
 
-mailtxt += 'Zambretti(at %s): ' % lcl.strftime('%H:%M %Z')
-mailtxt += Zambretti(params, hourly_data[idx])
-myMail = JrMail()
-myMail.send('Wettervorhersage', mailtxt)
-my_logger.info(mailtxt)
+    mailtxt += 'Zambretti(at %s): ' % lcl.strftime('%H:%M %Z')
+    mailtxt += Zambretti(params, hourly_data[idx])
+    my_mail = JrMail()
+    my_mail.send('Wettervorhersage', mailtxt)
+    my_logger.info(mailtxt)
+
+# ---------------------------------------------------------------------------------------------------------
+__name__ == '__main__' and forecast()
