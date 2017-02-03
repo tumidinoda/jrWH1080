@@ -6,9 +6,11 @@ from pywws import Localisation
 from pywws import ZambrettiCore
 from pywws.TimeZone import Local, utc
 
+from jrPyCore.jrLogger import JrLogger
 from jrPyCore.jrMail import JrMail
 
 
+# ----------------------------------------------------------------------------------------------------------------------
 def ZambrettiCode(params, hourly_data):
     north = eval(params.get('Zambretti', 'north', 'True'))
     baro_upper = eval(params.get('Zambretti', 'baro upper', '1050.0'))
@@ -35,6 +37,8 @@ def Zambretti(params, hourly_data):
 
 
 # ----------------------------------------------------------------------------------------------------------------------
+my_logger = JrLogger().setup(__name__)
+my_logger.info('jrForecast started')
 data_dir = '/home/robert/jrWH1080/data'
 params = DataStore.params(data_dir)
 Localisation.SetApplicationLanguage(params)
@@ -52,7 +56,6 @@ lcl = idx.replace(tzinfo=utc).astimezone(Local)
 
 mailtxt += 'Zambretti(at %s): ' % lcl.strftime('%H:%M %Z')
 mailtxt += Zambretti(params, hourly_data[idx])
-print(mailtxt)
-
 myMail = JrMail()
 myMail.send('Wettervorhersage', mailtxt)
+my_logger.info(mailtxt)
