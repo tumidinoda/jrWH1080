@@ -38,7 +38,7 @@ def Zambretti(params, hourly_data):
 
 # ----------------------------------------------------------------------------------------------------------------------
 def main():
-    my_logger = JrLogger().setup(__file__)
+    my_logger = JrLogger().get()
     my_logger.info('jrForecast started')
     data_dir = '/home/robert/jrWH1080/data'
     params = DataStore.params(data_dir)
