@@ -45,7 +45,7 @@ def main():
     Localisation.SetApplicationLanguage(params)
     hourly_data = DataStore.hourly_store(data_dir)
     idx = hourly_data.before(datetime.max)
-    mailtxt = '- Zambretti(current): ' + Zambretti(params, hourly_data[idx])
+    mailtxt = '\n- Zambretti(current): ' + Zambretti(params, hourly_data[idx])
     mailtxt += '\n- '
 
     idx = idx.replace(tzinfo=utc).astimezone(Local)
